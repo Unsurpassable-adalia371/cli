@@ -10,7 +10,7 @@ Work seamlessly with [Buddy](https://buddy.works) from the command line.
 
 ### npm (recommended)
 
-Requires Node.js 14+.
+Requires Node.js 24+.
 
 ```bash
 # macOS / Linux
